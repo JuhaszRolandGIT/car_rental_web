@@ -60,7 +60,7 @@ https://getbootstrap.com/docs/4.4/components/navbar/
   
 
   <?php
-$message = ""; // Alapértelmezett üzenet
+$message = ""; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
   $name = $_POST["name"];
@@ -68,10 +68,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
   $week = $_POST["week"];
   $transmission = $_POST["transmission"];
 
-  $to = "jszrl2003@gmail.com"; // Az e-mail cím, ahová az űrlap adatait küldjük
+  $to = "jszrl2003@gmail.com";
   $subject = "Kibérlési kérelem";
   $emailMessage = "Kibérlési információk:\nNév: $name\nSzületési dátum: $day\nHét: $week\nVáltó: $transmission";
-  $headers = "From: autoberles@webdeveloperss.hu"; // Módosítsd a feladó e-mail címét
+  $headers = "From: autoberles@webdeveloperss.hu";
 
   if (mail($to, $subject, $emailMessage, $headers)) {
     $message = "Az e-mail elküldése sikeres volt!";
@@ -81,12 +81,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
 }
 ?>
 
-<!-- Itt jelenítsd meg az űrlapot -->
 <form method="post" action="lamborgini.php">
-  <!-- Az űrlap mezői és gombja itt vannak -->
 </form>
 
-<!-- Itt jelenítsd meg az üzenetet -->
 <div id="message">
   <?php echo $message; ?>
 </div>
@@ -97,7 +94,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
   <div id="ageMessage" class="text-center"></div>
 
   <script>
-    // JavaScript kód az életkor ellenőrzéséhez és a gomb állapotának frissítéséhez
     const rentalForm = document.getElementById("rentalForm");
     const birthdateInput = document.getElementById("birthdate");
     const weekInput = document.querySelector('[name="week"]');
