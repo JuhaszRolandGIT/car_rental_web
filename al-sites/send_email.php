@@ -1,5 +1,5 @@
 <?php
-$message = ""; // Alapértelmezett üzenet
+$message = ""; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
   $name = $_POST["name"];
@@ -7,10 +7,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
   $week = $_POST["week"];
   $transmission = $_POST["transmission"];
 
-  $to = "jszrl2003@gmail.com"; // Az e-mail cím, ahová az űrlap adatait küldjük
+  $to = "jszrl2003@gmail.com";
   $subject = "Kibérlési kérelem";
   $emailMessage = "Kibérlési információk:\nNév: $name\nSzületési dátum: $day\nHét: $week\nVáltó: $transmission";
-  $headers = "From: autoberles@webdeveloperss.hu"; // Módosítsd a feladó e-mail címét
+  $headers = "From: autoberles@webdeveloperss.hu";
 
   if (mail($to, $subject, $emailMessage, $headers)) {
     $message = "Az e-mail elküldése sikeres volt!";
