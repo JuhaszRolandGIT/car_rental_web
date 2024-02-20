@@ -60,7 +60,7 @@ https://getbootstrap.com/docs/4.4/components/navbar/
   </form>
 
   <?php
-$message = ""; // Alapértelmezett üzenet
+$message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
   $name = $_POST["name"];
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
   $week = $_POST["week"];
   $transmission = $_POST["transmission"];
 
-  $to = "jszrl2003@gmail.com"; // Az e-mail cím, ahová az űrlap adatait küldjük
+  $to = "jszrl2003@gmail.com";
   $subject = "Kibérlési kérelem";
   $emailMessage = "Kibérlési információk:\nNév: $name\nSzületési dátum: $day\nHét: $week\nVáltó: $transmission";
   $headers = "From: autoberles@webdeveloperss.hu"; // Módosítsd a feladó e-mail címét
@@ -81,12 +81,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
 }
 ?>
 
-<!-- Itt jelenítsd meg az űrlapot -->
 <form method="post" action="lamborgini.php">
-  <!-- Az űrlap mezői és gombja itt vannak -->
 </form>
 
-<!-- Itt jelenítsd meg az üzenetet -->
 <div id="message">
   <?php echo $message; ?>
 </div>
